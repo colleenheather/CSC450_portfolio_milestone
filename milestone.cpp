@@ -22,7 +22,7 @@ void count(int direction, const std::string& threadName) {
         // std::lock_guard locks and unlocks object automatically when it is constructed and destroyed
         std::lock_guard<std::mutex> lock(mtx); 
         if (counter == 20 && direction == 1) break;
-        if (counter == -20 && direction == -1) break;
+        if (counter == 0 && direction == -1) break;
         counter += direction;
         std::cout << threadName << " Counter: " << counter << std::endl;
     }
